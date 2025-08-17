@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DMMHS Online Enrollment</title>
-
-  <!-- Bootstrap & Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
@@ -24,11 +22,10 @@
     <div class="container">
       <div class="d-flex justify-content-between align-items-center">
         <div></div>
-
         <ul class="nav nav-tabs">
           <li class="nav-item mx-2"><a class="nav-link" href="dashboard_teacher.html">Home</a></li>
-          <li class="nav-item mx-2"><a class="nav-link active" href="advisory_teacher.html">Advisory</a></li>
-          <li class="nav-item mx-2"><a class="nav-link" href="schedule_teacher.html">Schedule</a></li>
+          <li class="nav-item mx-2"><a class="nav-link" href="advisory_teacher.html">Advisory</a></li>
+          <li class="nav-item mx-2"><a class="nav-link active" href="schedule_teacher.html">Schedule</a></li>
           <li class="nav-item mx-2"><a class="nav-link" href="grading_teacher.html">Grading</a></li>
         </ul>
 
@@ -47,73 +44,71 @@
                  style="width: 40px; height: 40px; object-fit: cover;">
           </button>
         </div>
-      </div> 
+      </div>
     </div>
   </nav>
-
+  
   <!-- Teacher Dashboard -->
-  <section id="teacher-dashboard" class="container py-5">
+  <section id="schedule" class="container py-5">
+    <!-- Header bar -->
+    <div class="p-3 mb-3 d-flex align-items-center justify-content-between">
+      <h3 class="m-0 fw-bold">📅 Your weekly teaching schedule</h3>
+    </div>
 
-    <!-- Advisory Class List -->
-    <div class="mb-5">
-      <h4>📚 Advisory Class List</h4>
-      <table class="table table-bordered">
-        <thead class="table-light">
+    <!-- Weekly grid -->
+    <div class="table-responsive">
+      <table class="table m-0" style="border-collapse:separate;border-spacing:0;">
+        <thead>
           <tr>
-            <th>Student Name</th>
-            <th>Grade Level</th>
-            <th>Section</th>
-            <th>Document Status</th>
+            <th class="text-white align-middle" style="width:140px;">TIME</th>
+            <th class="text-white text-center">MONDAY</th>
+            <th class="text-white text-center">TUESDAY</th>
+            <th class="text-white text-center">WEDNESDAY</th>
+            <th class="text-white text-center">THURSDAY</th>
+            <th class="text-white text-center">FRIDAY</th>
           </tr>
         </thead>
         <tbody>
+          <!-- Each row = time slot -->
           <tr>
-            <td>Juan Dela Cruz</td>
-            <td>Grade 7</td>
-            <td>St. John</td>
-            <td><span class="badge bg-success">Complete</span></td>
+            <th class="align-middle bg-light">8:00–9:30</th>
+            <td class="sched-cell"><div><strong>Math 7</strong><br><span>Rm 201</span></div></td>
+            <td class="sched-cell"></td>
+            <td class="sched-cell"><div><strong>English 7</strong><br><span>Rm 204</span></div></td>
+            <td class="sched-cell"></td>
+            <td class="sched-cell"><div><strong>Science 7</strong><br><span>Rm 202</span></div></td>
           </tr>
           <tr>
-            <td>Maria Santos</td>
-            <td>Grade 7</td>
-            <td>St. John</td>
-            <td><span class="badge bg-warning text-dark">Incomplete</span></td>
+            <th class="align-middle bg-light">9:30–10:00</th>
+            <td class="sched-cell break"></td>
+            <td class="sched-cell break"></td>
+            <td class="sched-cell break"></td>
+            <td class="sched-cell break"></td>
+            <td class="sched-cell break"></td>
           </tr>
           <tr>
-            <td>Carlos Ramirez</td>
-            <td>Grade 8</td>
-            <td>St. Peter</td>
-            <td><span class="badge bg-danger">Missing</span></td>
+            <th class="align-middle bg-light">10:00–11:30</th>
+            <td class="sched-cell"></td>
+            <td class="sched-cell"><div><strong>Filipino 7</strong><br><span>Rm 203</span></div></td>
+            <td class="sched-cell"></td>
+            <td class="sched-cell"><div><strong>MAPEH 7</strong><br><span>Gym</span></div></td>
+            <td class="sched-cell"></td>
           </tr>
           <tr>
-            <td>Ana Lopez</td>
-            <td>Grade 9</td>
-            <td>St. Mary</td>
-            <td><span class="badge bg-success">Complete</span></td>
+            <th class="align-middle bg-light">11:30–1:00</th>
+            <td class="sched-cell break"></td>
+            <td class="sched-cell break"></td>
+            <td class="sched-cell break"></td>
+            <td class="sched-cell break"></td>
+            <td class="sched-cell break"></td>
           </tr>
           <tr>
-            <td>Mark Reyes</td>
-            <td>Grade 10</td>
-            <td>St. Paul</td>
-            <td><span class="badge bg-warning text-dark">Incomplete</span></td>
-          </tr>
-          <tr>
-            <td>Sophia Cruz</td>
-            <td>Grade 8</td>
-            <td>St. Anne</td>
-            <td><span class="badge bg-success">Complete</span></td>
-          </tr>
-          <tr>
-            <td>Daniel Villanueva</td>
-            <td>Grade 9</td>
-            <td>St. Francis</td>
-            <td><span class="badge bg-danger">Missing</span></td>
-          </tr>
-          <tr>
-            <td>Grace Lim</td>
-            <td>Grade 10</td>
-            <td>St. Michael</td>
-            <td><span class="badge bg-success">Complete</span></td>
+            <th class="align-middle bg-light">1:00–2:30</th>
+            <td class="sched-cell"><div><strong>AP 7</strong><br><span>Rm 205</span></div></td>
+            <td class="sched-cell"></td>
+            <td class="sched-cell"></td>
+            <td class="sched-cell"><div><strong>TLE 7</strong><br><span>Lab 1</span></div></td>
+            <td class="sched-cell"></td>
           </tr>
         </tbody>
       </table>
@@ -125,14 +120,14 @@
     <small>&copy; 2025 Diosdado Macapagal Memorial High School. All rights reserved.</small>
   </footer>
 
-  <!-- Offcanvas Right -->
+  <!-- Offcanvas Profile -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="profilePanel" aria-labelledby="profilePanelLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="profilePanelLabel">Profile</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body p-0" id="profileContent">
-      <!-- profile_teacher.html will be injected here -->
+      <!-- profile.html will be injected here -->
       <div class="p-3 text-muted small">Loading...</div>
     </div>
   </div>

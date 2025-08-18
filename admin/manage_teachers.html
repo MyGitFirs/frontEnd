@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DMMHS - Manage Teachers</title>
+  <!-- Styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="py-3 border-bottom">
+    <div class="container d-flex align-items-center">
+      <img src="../assets/img/logo_scl1.png" alt="School Logo" width="50" height="50" class="me-3" />
+      <h1 class="h4 mb-0">Diosdado Macapagal Memorial High School</h1>
+    </div>
+  </header>
+
+  <!-- Tabbed Navigation -->
+  <nav class="border-bottom">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+      <div></div>
+      <ul class="nav nav-tabs">
+        <li class="nav-item"><a class="nav-link" href="dashboard_admin.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="manage_students.html">Manage Students</a></li>
+        <li class="nav-item"><a class="nav-link active" href="manage_teachers.html">Manage Teachers</a></li>
+        <li class="nav-item"><a class="nav-link" href="manage_schedule.html">Manage Schedule</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
+      </ul>
+      <div></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Manage Teachers Section -->
+  <section class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2>👨‍🏫 Manage Teachers</h2>
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addTeacherModal">+ Add New Teacher</button>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="🔍 Search by Name, ID, or Subject">
+      </div>
+      <div class="col-md-3">
+        <select class="form-select">
+          <option value="">Filter by Department</option>
+          <option>Mathematics</option>
+          <option>Science</option>
+          <option>English</option>
+          <option>Filipino</option>
+          <option>Araling Panlipunan</option>
+          <option>MAPEH</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select class="form-select">
+          <option value="">Filter by Status</option>
+          <option>Active</option>
+          <option>On Leave</option>
+          <option>Retired</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Teachers Table -->
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Department</th>
+            <th>Status</th>
+            <th width="220">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TCH-2025-001</td>
+            <td>Ana Dela Cruz</td>
+            <td>Mathematics</td>
+            <td>Math Department</td>
+            <td><span class="badge bg-success">Active</span></td>
+            <td>
+              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editTeacherModal">Edit</button>
+              <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteTeacherModal">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>TCH-2025-002</td>
+            <td>Jose Santos</td>
+            <td>Science</td>
+            <td>Science Department</td>
+            <td><span class="badge bg-warning text-dark">On Leave</span></td>
+            <td>
+              <button class="btn btn-sm btn-success">Reinstate</button>
+              <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteTeacherModal">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Add Teacher Modal -->
+  <div class="modal fade" id="addTeacherModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">
+            <h5 class="modal-title">➕ Add New Teacher</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body row g-3">
+            <div class="col-md-6">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Department</label>
+              <select class="form-select" required>
+                <option selected disabled>Choose...</option>
+                <option>Mathematics</option>
+                <option>Science</option>
+                <option>English</option>
+                <option>Filipino</option>
+                <option>Araling Panlipunan</option>
+                <option>MAPEH</option>
+              </select>
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">Status</label>
+              <select class="form-select">
+                <option>Active</option>
+                <option>On Leave</option>
+                <option>Retired</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Save Teacher</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Teacher Modal -->
+  <div class="modal fade" id="editTeacherModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">
+            <h5 class="modal-title">✏️ Edit Teacher</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body row g-3">
+            <div class="col-md-6">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-control" value="Ana" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-control" value="Dela Cruz" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-control" value="Mathematics" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Department</label>
+              <select class="form-select">
+                <option selected>Mathematics</option>
+                <option>Science</option>
+                <option>English</option>
+                <option>Filipino</option>
+                <option>Araling Panlipunan</option>
+                <option>MAPEH</option>
+              </select>
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">Status</label>
+              <select class="form-select">
+                <option selected>Active</option>
+                <option>On Leave</option>
+                <option>Retired</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Update Teacher</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Teacher Modal -->
+  <div class="modal fade" id="deleteTeacherModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">⚠️ Confirm Delete</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to <strong>delete this teacher</strong>? This action cannot be undone.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger">Yes, Delete</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-white text-center py-3 mt-5">
+    <small>&copy; 2025 Diosdado Macapagal Memorial High School. All rights reserved.</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

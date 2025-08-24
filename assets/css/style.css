@@ -21,7 +21,7 @@ section {
 }
 
 header {
-  background-color: #004aad;
+  background-color: #7b996a;
   color: white;
 }
 
@@ -30,24 +30,24 @@ nav {
 }
 
 .nav-tabs .nav-link.active {
-  background-color: #004aad !important;
+  background-color: #7b996a !important;
   color: white !important;
   border: none;
 }
 
 .nav-tabs .nav-link {
-  color: #004aad;
+  color: #7b996a;
   font-weight: 500;
 }
 
 .btn-primary {
-  background-color: #004aad;
-  border-color: #f6f6f6;
+  background-color: #7b996a;
+  border-color: #6d8b5d;
 }
 
 .btn-primary:hover {
-  background-color: #003580;
-  border-color: #003580;
+  background-color: #657c55;
+  border-color: #657c55;
 }
 
 .card {
@@ -60,17 +60,17 @@ nav {
 }
 
 footer {
-  background-color: #004aad;
+  background-color: #7b996a;
   margin-top: auto;
 }
 
 h2 {
-  color: #004aad;
+  color: #7b996a;
   font-weight: 600;
 }
 
 .table thead {
-  background-color: #004aad;
+  background-color: #7b996a;
   color: white;
 }
 
@@ -80,16 +80,16 @@ h2 {
   font-weight: 500;
   padding: 0.6rem 1.5rem;
   transition: all 0.3s ease;
-  color: #004aad;
+  color: #7b996a;
 }
 
 .btn-group .btn:hover {
-  background-color: #e0e7ff;
-  color: #003580;
+  background-color: #edf3e9;
+  color: #657c55;
 }
 
 .btn-group .btn-check:checked + .btn {
-  background-color: #004aad;
+  background-color: #7b996a;
   color: #fff;
   box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
 }
@@ -97,7 +97,7 @@ h2 {
 /* 📅 Schedule Table */
 #schedule thead th {
   border: 1px solid #dee2e6 !important;
-  background-color: #004aad;
+  background-color: #7b996a;
   color: #fff;
   text-align: center;
   font-weight: 600;
@@ -125,7 +125,7 @@ h2 {
   line-height: 1.2rem;
   text-align: center;
   font-weight: 500;
-  color: #286ec8;
+  color: #7b996a;
 }
 
 .sched-cell span {
@@ -135,13 +135,13 @@ h2 {
 
 .sched-cell.break {
   background: #fff;
-  color: #286ec8;
+  color: #7b996a;
   font-style: italic;
 }
 
 /* 📊 Grades Section */
 .mb-5 h4 {
-  color: #004aad;
+  color: #7b996a;
   font-weight: 600;
   margin-bottom: 1rem;
   display: flex;
@@ -158,7 +158,7 @@ h2 {
 }
 
 .table.grades-table thead {
-  background-color: #004aad;
+  background-color: #7b996a;
   color: #fff;
   font-weight: 600;
   text-align: center;
@@ -173,11 +173,11 @@ h2 {
 .table.grades-table tbody tr td:first-child {
   text-align: center;
   font-weight: 500;
-  color: #004aad;
+  color: #7b996a;
 }
 
 .table.grades-table tbody tr:hover {
-  background-color: #f1f5ff;
+  background-color: #f1f5f1;
 }
 
 /* Profile Button */
